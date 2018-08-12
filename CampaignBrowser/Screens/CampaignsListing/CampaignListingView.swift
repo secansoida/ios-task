@@ -22,16 +22,36 @@ class CampaignListingView: UICollectionView {
 
         /** The cell which is used to display a campaign. */
         case campaignCell
+
+        /** The cell which is used to display error with retry button. */
+        case errorCell
     }
 
     /**
      Displays the given campaign list.
      */
     func display(campaigns: CampaignList) {
-        let campaignDataSource = ListingDataSource(campaigns: campaigns)
-        dataSource = campaignDataSource
-        delegate = campaignDataSource
-        strongDataSource = campaignDataSource
+        setup(with: ListingDataSource(campaigns: campaigns))
+    }
+
+    /**
+     Displays loading indicator.
+     */
+    func displayLoading() {
+        setup(with: LoadingDataSource())
+    }
+
+    /**
+     Displays error cell.
+     */
+    func displayError() {
+        setup(with: ErrorDataSource())
+    }
+
+    private func setup<T>(with dataSource: T) where T: UICollectionViewDataSource, T: UICollectionViewDelegate {
+        self.dataSource = dataSource
+        delegate = dataSource
+        strongDataSource = dataSource
         reloadData()
     }
 }
@@ -94,6 +114,30 @@ class LoadingDataSource: NSObject, UICollectionViewDataSource, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let reuseIdentifier = CampaignListingView.Cells.loadingIndicatorCell.rawValue
+        return collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
+                                                  for: indexPath)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return collectionView.frame.size
+    }
+}
+
+
+
+/**
+ The data source for the `CampaignsListingView` which is used when an error occurs
+ */
+private final class ErrorDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let reuseIdentifier = CampaignListingView.Cells.errorCell.rawValue
         return collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
                                                   for: indexPath)
     }

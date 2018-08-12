@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.3.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -33,17 +32,17 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h3t-mf-lUQ">
-                                            <rect key="frame" x="8" y="8" width="359" height="267"/>
+                                            <rect key="frame" x="8" y="28" width="359" height="247"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YiC-pw-PH8" customClass="LabelWithPadding" customModule="CampaignBrowser" customModuleProvider="target">
-                                            <rect key="frame" x="8" y="202.5" width="60.5" height="36.5"/>
+                                            <rect key="frame" x="8" y="234.5" width="44.5" height="20.5"/>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKV-MD-vzF" customClass="LabelWithPadding" customModule="CampaignBrowser" customModuleProvider="target">
-                                            <rect key="frame" x="8" y="239" width="359" height="28"/>
+                                            <rect key="frame" x="8" y="255" width="359" height="12"/>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <edgeInsets key="layoutMargins" top="8" left="20" bottom="8" right="8"/>
                                             <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="12"/>
@@ -59,6 +58,7 @@
                                     <constraint firstAttribute="bottomMargin" secondItem="iKV-MD-vzF" secondAttribute="bottom" constant="8" id="AgS-3w-y75"/>
                                     <constraint firstItem="YiC-pw-PH8" firstAttribute="leading" secondItem="Kec-Ca-5D8" secondAttribute="leadingMargin" id="PgD-gW-tZP"/>
                                     <constraint firstItem="iKV-MD-vzF" firstAttribute="top" secondItem="YiC-pw-PH8" secondAttribute="bottom" id="QqG-b8-yhQ"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YiC-pw-PH8" secondAttribute="trailing" symbolic="YES" id="Uof-62-Riy"/>
                                     <constraint firstItem="h3t-mf-lUQ" firstAttribute="top" secondItem="Kec-Ca-5D8" secondAttribute="topMargin" id="bUW-eS-iVs"/>
                                     <constraint firstAttribute="bottomMargin" secondItem="h3t-mf-lUQ" secondAttribute="bottom" id="uaV-3P-jj4"/>
                                     <constraint firstItem="h3t-mf-lUQ" firstAttribute="leading" secondItem="Kec-Ca-5D8" secondAttribute="leadingMargin" id="wC4-Bv-2Cj"/>
@@ -78,7 +78,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="o42-h4-YUU">
-                                            <rect key="frame" x="169" y="94.5" width="37" height="37"/>
+                                            <rect key="frame" x="169" y="94" width="37" height="37"/>
                                             <color key="color" red="0.32549019610000002" green="0.68627450980000004" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                         </activityIndicatorView>
                                     </subviews>
@@ -86,6 +86,52 @@
                                 <constraints>
                                     <constraint firstItem="o42-h4-YUU" firstAttribute="centerY" secondItem="SZh-Y0-q4r" secondAttribute="centerY" id="BHm-qk-dsS"/>
                                     <constraint firstItem="o42-h4-YUU" firstAttribute="centerX" secondItem="SZh-Y0-q4r" secondAttribute="centerX" id="GpV-75-nCU"/>
+                                </constraints>
+                                <size key="customSize" width="375" height="225"/>
+                            </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="errorCell" id="JLr-7K-eB9">
+                                <rect key="frame" x="0.0" y="528" width="375" height="225"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="225"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GVe-l2-S4A">
+                                            <rect key="frame" x="16" y="63.5" width="343" height="98"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There was an error. Please check your internet connection and try again." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uew-gI-ZJm" customClass="LabelWithPadding" customModule="CampaignBrowser" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="57"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5i-3p-dK4">
+                                                    <rect key="frame" x="152.5" y="65" width="38" height="33"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                    <color key="tintColor" red="0.32549019610000002" green="0.68627450980000004" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="retry"/>
+                                                    <connections>
+                                                        <action selector="didTapRetryButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="pVA-uY-Vmm"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="Uew-gI-ZJm" firstAttribute="leading" secondItem="GVe-l2-S4A" secondAttribute="leading" id="PPD-vY-IWO"/>
+                                                <constraint firstAttribute="trailing" secondItem="Uew-gI-ZJm" secondAttribute="trailing" id="bPc-UZ-Fwf"/>
+                                                <constraint firstAttribute="bottom" secondItem="L5i-3p-dK4" secondAttribute="bottom" id="cnu-sX-rdu"/>
+                                                <constraint firstItem="Uew-gI-ZJm" firstAttribute="top" secondItem="GVe-l2-S4A" secondAttribute="top" id="g8M-RM-sNP"/>
+                                                <constraint firstItem="L5i-3p-dK4" firstAttribute="centerX" secondItem="GVe-l2-S4A" secondAttribute="centerX" id="hY1-TC-B5i"/>
+                                                <constraint firstItem="L5i-3p-dK4" firstAttribute="top" secondItem="Uew-gI-ZJm" secondAttribute="bottom" constant="8" id="zsM-tT-Q66"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="GVe-l2-S4A" firstAttribute="leading" secondItem="JLr-7K-eB9" secondAttribute="leading" constant="16" id="6ue-v4-o7H"/>
+                                    <constraint firstItem="GVe-l2-S4A" firstAttribute="centerY" secondItem="JLr-7K-eB9" secondAttribute="centerY" id="tLc-RF-fTu"/>
+                                    <constraint firstItem="GVe-l2-S4A" firstAttribute="centerX" secondItem="JLr-7K-eB9" secondAttribute="centerX" id="uHk-bp-mUu"/>
                                 </constraints>
                                 <size key="customSize" width="375" height="225"/>
                             </collectionViewCell>
